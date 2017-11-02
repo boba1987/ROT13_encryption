@@ -1,6 +1,6 @@
 /**
 Javascript ROT13 implementation
-- Works in both direction - encrypt -> decrypt
+- Works in both directions - encrypt -> decrypt
 **/
 
 exports.encrypt = function(string) {
