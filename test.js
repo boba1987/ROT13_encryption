@@ -1,14 +1,16 @@
 var encrypted = require('./index.js');
-var pharse = 'You only need one Boba to rule them all';
-var encryptedPhrase;
-
 var assert = require('assert');
+
 describe('ROT13', function() {
-  it('Should not match ' + pharse + ' after encrypted', function() {
-    encryptedPhrase = encrypted.encrypt(pharse);
+  var phrase = "You only need one Boba to rule them all";
+  var encryptedPhrase;
+
+  it('Should NOT match "'+ phrase +'" after encrypted', function() {
+    encryptedPhrase = encrypted.encrypt(phrase);
+    assert.notEqual(encryptedPhrase, phrase);
   });
-  
-  it('Should match ' + pharse + ' after encrypted', function() {
-    encrypted.encrypt(encryptedPhrase);
+
+  it('Should MATCH "'+ phrase +'" after decrypted', function() {
+    assert.equal(encrypted.encrypt(encryptedPhrase), phrase);
   });
 });
